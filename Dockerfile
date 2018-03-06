@@ -24,6 +24,7 @@ RUN pip3 install 'influxdb>=5.0.0' && \
 RUN echo "deb http://loudml.s3-website-eu-west-1.amazonaws.com/repo/deb/ stretch main" | tee -a /etc/apt/sources.list.d/loudml-1.x.list
 RUN apt-get -y update && apt-get install -y --allow-unauthenticated loudml-elastic loudml-influx
 
+COPY conf/config.template.yml /template.yml
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 

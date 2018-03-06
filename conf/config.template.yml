@@ -2,13 +2,13 @@
 datasources:
  - name: influx
    type: influxdb
-   addr: "${influx_addr}"
-   database: "${influx_database}"
+   addr: ${influx}
+   database: ${influx_database}
 
  - name: elastic
    type: elasticsearch
-   addr: "${elastic_url}"
-   index: "${elastic_index}"
+   addr: ${elastic}
+   index: ${elastic_index}
 
 storage:
   path: /var/lib/loudml
