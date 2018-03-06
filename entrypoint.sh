@@ -44,8 +44,8 @@ rm -rf temp.yml
   echo "EOF";
 ) >temp.yml
 . temp.yml
-cat /etc/loudml/config.yml
 fi
+cat /etc/loudml/config.yml
 
 jupyter notebook --allow-root --notebook-dir=/tensorflow/models/research/object_detection --ip='*' --port=8888 --no-browser &
 loudmld
