@@ -1,0 +1,45 @@
+version: '2'
+
+services:
+  # Define an LoudML+Tensorflow service
+  loudml:
+    depends_on:
+      - "influxdb"
+    image: qxip/loudml:latest
+    volumes:
+      - ./config.yml:/etc/loudml/config.yml
+    ports:
+      - "8077:8077"
+      - "8887:8887"
+    links:
+      - influxdb
+  # Define an InfluxDB service
+  influxdb:
+    depends_on:
+      - "homer"
+    image: influxdb:latest
+    volumes:
+      - ./data/influxdb:/var/lib/influxdb
+  # Define a Chronograf service
+  chronograf:
+    depends_on:
+      - "influxdb"
+    image: chronograf:latest
+    environment:
+      INFLUXDB_URL: http://influxdb:8086
+      KAPACITOR_URL: http://kapacitor:9092
+    ports:
+      - "8888:8888"
+    links:
+      - influxdb
+      - kapacitor
+  # Define a Kapacitor service
+  kapacitor:
+    depends_on:
+      - "influxdb"
+    image: kapacitor:latest
+    environment:
+      KAPACITOR_HOSTNAME: kapacitor
+      KAPACITOR_INFLUXDB_0_URLS_0: http://influxdb:8086
+    links:
+      - influxdb
