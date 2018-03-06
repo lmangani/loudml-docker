@@ -3,5 +3,5 @@
 
 ### Dev Run
 ```
-docker run --name loudml -p 8888:8888 -p 8077:8077 -d qxip/loudml-docker:latest
+docker run --name loudml -p 8888:8888 -p 8077:8077 -v $(pwd)/config.yml:/etc/loudml/config.yml -d qxip/loudml-docker:latest
 ```
