@@ -6,6 +6,9 @@ services:
     depends_on:
       - "influxdb"
     image: qxip/loudml:latest
+    environment:
+      influx: http://influxdb:8086
+      influx_database: telegraf
     volumes:
       - ./config.yml:/etc/loudml/config.yml
     ports:
