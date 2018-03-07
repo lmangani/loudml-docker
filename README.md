@@ -1,6 +1,8 @@
 # loudml-docker
 [Loudml](http://loudml.io) API+ Tensorflow + Jupyter bundle for Developers
 
+For Model Configuration, API and Features see the guide at [loudml.io](http://loudml.io/guide/en/loudml/reference/current/cli.html)
+
 ### Dev Run
 Start container w/ local configuration file:
 ```
