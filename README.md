@@ -1,3 +1,5 @@
+<img src="http://loudml.io/wp-content/uploads/2018/01/LoudML3-300x147.png" />
+
 # loudml-docker
 [Loudml](http://loudml.io) API+ Tensorflow + Jupyter bundle for Developers
 
@@ -19,3 +21,6 @@ elastic_index: logstash-*
 influx: 127.0.0.1:8086
 influx_database: telegraf
 ```
+
+
+###### Logo and Trademarks are © 2018 Loud ML™. All rights reserved.
