@@ -1,4 +1,5 @@
 FROM debian:9
+## REBUILD TAG 05072018
 RUN apt-get update && yes | apt-get upgrade
 RUN mkdir -p /tensorflow/models
 RUN apt-get install -y git python-pip apt-transport-https wget curl python3 python3-pip
